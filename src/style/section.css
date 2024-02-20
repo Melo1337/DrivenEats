@@ -1,0 +1,51 @@
+section {
+    margin-left: 1.2rem;
+}
+
+section>.options>p {
+    font-family: Righteous;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+section>.options {
+    margin-top: 1.8rem;
+}
+
+.option {
+    width: 172px;
+    height: 216px;
+    border-radius: 9px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0.86rem;
+}
+
+.option img {
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+}
+
+.option :nth-child(2) {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.option :nth-child(3) {
+    color: #A6A6A6;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+
+}
+
+.option :nth-child(4) {
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+}
