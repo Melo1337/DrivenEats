@@ -2,7 +2,7 @@ section {
     margin-left: 1.2rem;
 }
 
-section>.options>p {
+section > .section > p {
     font-family: Righteous;
     font-size: 26px;
     font-weight: 400;
