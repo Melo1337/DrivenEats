@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    height: 92px;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+footer button {
+    width: 364px;
+    height: 62px;
+    padding: 0px 20% 0px 20%;
+    border: none;
+    width: 364px;
+    left: 25px;
+    border-radius: 50px;
+    background-color: #CBCBCB;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+}

@@ -35,6 +35,10 @@ section .options {
     padding: 0.86rem;
 }
 
+.select {
+    border: 4px solid greenyellow;
+}
+
 .option img {
     width: 144px;
     height: 87px;
@@ -59,4 +63,8 @@ section .options {
     text-align: left;
     font-size: 16px;
     font-weight: 600;
+}
+
+.third {
+    margin-bottom: 110px;
 }
