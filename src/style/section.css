@@ -1,5 +1,14 @@
 section {
     margin-left: 1.2rem;
+    margin-top: 94px;
+}
+
+.section {
+    margin-top: 26px;
+}
+
+section .first {
+    margin-top: 118px;
 }
 
 section > .section > p {
@@ -9,11 +18,13 @@ section > .section > p {
     margin-bottom: 1rem;
 }
 
-section>.options {
-    margin-top: 1.8rem;
+section .options {
+    display: flex;
+    overflow-y: hidden;
 }
 
 .option {
+    margin-right: 1rem;
     width: 172px;
     height: 216px;
     border-radius: 9px;

@@ -1,6 +1,8 @@
 header {
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0px;
     background-color: #CF2B2B;
     height: 92px;
     width: 100%;
