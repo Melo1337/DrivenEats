@@ -1,9 +1,13 @@
-let button = document.getElementsByTagName('button');
+function selectProduct() {
+    let option = document.querySelectorAll('.option');
+    
+    let valuesOption = Object.values(option);
+    
+    console.log(valuesOption)
 
-button.addEventListener('click',function(){
-    if (button.classList.contains('select')==true) {
-        button.removeAttribute('class','select');
+    if (option[0].classList.contains('select')) {
+        option[0].classList.remove('select');
     } else {
-        button.setAttribute('class','select');
+        option[0].classList.add('select');
     }
-})
+}
