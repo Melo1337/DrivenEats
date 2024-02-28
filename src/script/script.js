@@ -1,13 +1,33 @@
-function selectProduct() {
-    let option = document.querySelectorAll('.option');
-    
-    let valuesOption = Object.values(option);
-    
-    console.log(valuesOption)
+let optionOneSelected = null
 
-    if (option[0].classList.contains('select')) {
-        option[0].classList.remove('select');
-    } else {
-        option[0].classList.add('select');
+function selectProductOne(option) {
+    if (optionOneSelected !== null) {
+        optionOneSelected.classList.remove("select");
     }
+
+    optionOneSelected = option
+    optionOneSelected.classList.add("select")
+}
+
+let optionTwoSelected = null
+
+
+function selectProductTwo(option) {
+    if (optionTwoSelected !== null) {
+        optionTwoSelected.classList.remove("select");
+    }
+
+    optionTwoSelected = option
+    optionTwoSelected.classList.add("select")
+}
+
+let optionThreeSelected = null
+
+function selectProductThree(option) {
+    if (optionThreeSelected !== null) {
+        optionThreeSelected.classList.remove("select");
+    }
+
+    optionThreeSelected = option
+    optionThreeSelected.classList.add("select")
 }
