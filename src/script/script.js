@@ -31,3 +31,9 @@ function selectProductThree(option) {
     optionThreeSelected = option
     optionThreeSelected.classList.add("select")
 }
+
+if (optionOneSelected.classList.contains("select") && optionTwoSelected.classList.contains("select") && optionThreeSelected.classList.contains("select")) {
+    let button = document.getElementsByTagName("button")
+    button[0].classList.add("select")
+}
+
