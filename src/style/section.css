@@ -36,7 +36,7 @@ section .options {
 }
 
 .select {
-    border: 4px solid rgb(125, 199, 14);
+    border: 4px solid green;
 }
 
 .option img {
