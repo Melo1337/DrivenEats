@@ -13,6 +13,29 @@
 </head>
 
 <body>
+    <div class="confirmation">
+        <div>
+            <h1>Confirme seu pedido</h1>
+            <ul class="productSelected">
+                <li>Frango Yin Yang</li>
+                <li>14,90</li>
+            </ul>
+            <ul class="productSelected">
+                <li>Frango Yin Yang</li>
+                <li>14,90</li>
+            </ul>
+            <ul class="productSelected">
+                <li>Frango Yin Yang</li>
+                <li>14,90</li>
+            </ul>
+            <ul class="productSelected">
+                <li>Total</li>
+                <li>14,90</li>
+            </ul>
+            <button>Tudo certo, pode pedir!</button>
+            <button>Cancelar</button>
+        </div>
+    </div>
     <header>
         <div class="logo">
             <h1>DrivenEats</h1>
@@ -91,7 +114,7 @@
         </div>
     </section>
     <footer>
-        <button>Selecione os 3 itens para fechar o pedido</button>
+        <button onclick="closeOrder(this)">Selecione os 3 itens para fechar o pedido</button>
     </footer>
     <script src="./src/script/script.js"></script>
 </body>
