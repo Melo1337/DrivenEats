@@ -46,11 +46,13 @@ function checkOptionsSelected() {
         optionTwoSelected.classList.contains("select") &&
         optionThreeSelected.classList.contains("select")
     ) {
-        let button = document.getElementsByTagName("button");
+        let button = document.getElementsByClassName("closeOrder");
         button[0].classList.add("buttonSelect");
     }
 }
 
 function closeOrder(button) {
-    
+    console.log(optionThreeSelected)
+    console.log(optionTwoSelected)
+    console.log(optionOneSelected)
 }

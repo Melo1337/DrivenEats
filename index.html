@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="confirmation">
+    <div class="">
         <div>
             <h1>Confirme seu pedido</h1>
             <ul class="productSelected">
@@ -29,8 +29,8 @@
                 <li>14,90</li>
             </ul>
             <ul class="productSelected">
-                <li>Total</li>
-                <li>14,90</li>
+                <li><strong>Total</strong></li>
+                <li><strong>14,90</strong></li>
             </ul>
             <button>Tudo certo, pode pedir!</button>
             <button>Cancelar</button>
@@ -46,19 +46,19 @@
         <div class="first section">
             <p>Primeiro, seu prato</p>
             <div class="options">
-                <div onclick="selectProductOne(this)" class="option 1">
+                <div onclick="selectProductOne(this)" class="option">
                     <img src="./src/img/principal-plate.png" alt="" srcset="">
                     <p>Frango Yin Yang</p>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <P>R$ 14,90</P>
                 </div>
-                <div onclick="selectProductOne(this)" class="option 1">
+                <div onclick="selectProductOne(this)" class="option">
                     <img src="./src/img/principal-plate.png" alt="" srcset="">
                     <p>Frango Yin Yang</p>
                     <p>Um pouco de batata, um pouco de salada</p>
                     <P>R$ 14,90</P>
                 </div>
-                <div onclick="selectProductOne(this)" class="option 1">
+                <div onclick="selectProductOne(this)" class="option">
                     <img src="./src/img/principal-plate.png" alt="" srcset="">
                     <p>Frango Yin Yang</p>
                     <p>Um pouco de batata, um pouco de salada</p>
@@ -114,7 +114,7 @@
         </div>
     </section>
     <footer>
-        <button onclick="closeOrder(this)">Selecione os 3 itens para fechar o pedido</button>
+        <button class="closeOrder" onclick="closeOrder(this)">Selecione os 3 itens para fechar o pedido</button>
     </footer>
     <script src="./src/script/script.js"></script>
 </body>
