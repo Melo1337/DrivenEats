@@ -52,7 +52,6 @@ function checkOptionsSelected() {
 }
 
 function closeOrder(button) {
-    console.log(optionThreeSelected)
-    console.log(optionTwoSelected)
-    console.log(optionOneSelected)
+    const closeOrder = document.getElementsByClassName("hide");
+    closeOrder[0].classList.toggle("productSelected");
 }

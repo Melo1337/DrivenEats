@@ -140,3 +140,7 @@ section .options {
     text-align: left;
     margin-top: 18px;
 }
+
+.hide {
+    display: none;
+}
