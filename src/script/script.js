@@ -53,5 +53,23 @@ function checkOptionsSelected() {
 
 function closeOrder(button) {
     const closeOrder = document.getElementsByClassName("hide");
-    closeOrder[0].classList.toggle("productSelected");
+    closeOrder[0].classList.remove("hide");
+
+    let priceOneText = document.getElementsByClassName("select")[0].lastElementChild;
+    let priceTwoText = document.getElementsByClassName("select")[1].lastElementChild;
+    let priceThreeText = document.getElementsByClassName("select")[2].lastElementChild;
+
+    let price1 = priceOne.innerHTML
+    let price2 = priceTwo.innerHTML
+    let price3 = priceThree.innerHTML
+
+    var amount = price1 + price2 + price3;
+
+    let amountHTML = document.getElementsByClassName("productSelected")[3].lastElementChild;
+    amountHTML.innerHTML = parseFloat(amount.innerHTML.toFixed(2).replace(',', '.'));
+}
+
+function cancel(button) {
+    const cancelButton = document.getElementsByClassName("confirmation");
+    cancelButton[0].classList.add("hide");
 }
