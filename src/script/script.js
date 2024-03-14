@@ -55,18 +55,33 @@ function closeOrder(button) {
     const closeOrder = document.getElementsByClassName("hide");
     closeOrder[0].classList.remove("hide");
 
-    let priceOneText = document.getElementsByClassName("select")[0].lastElementChild;
-    let priceTwoText = document.getElementsByClassName("select")[1].lastElementChild;
-    let priceThreeText = document.getElementsByClassName("select")[2].lastElementChild;
+    function fullPrice() {
+        let priceOneText = document.getElementsByClassName("select")[0].lastElementChild.innerHTML.substring(3).replace(',', '.');
+        let priceTwoText = document.getElementsByClassName("select")[1].lastElementChild.innerHTML.substring(3).replace(',', '.');
+        let priceThreeText = document.getElementsByClassName("select")[2].lastElementChild.innerHTML.substring(3).replace(',', '.');
 
-    let price1 = priceOne.innerHTML
-    let price2 = priceTwo.innerHTML
-    let price3 = priceThree.innerHTML
+        let PriceOne = parseFloat(priceOneText)
+        let PriceTwo = parseFloat(priceTwoText)
+        let PriceThree = parseFloat(priceThreeText)
 
-    var amount = price1 + price2 + price3;
+        let amount = PriceOne + PriceTwo + PriceThree
 
-    let amountHTML = document.getElementsByClassName("productSelected")[3].lastElementChild;
-    amountHTML.innerHTML = parseFloat(amount.innerHTML.toFixed(2).replace(',', '.'));
+        let amountHTML = document.getElementsByClassName("productSelected")[3].lastElementChild;
+        amountHTML.innerHTML = amount.toFixed(2).replace('.', ',');
+    }
+    fullPrice()
+
+    function optionsSeleted() {
+        let option1 = document.querySelector(".select :nth-child(2)").innerHTML;
+        let productSelected = document.querySelector(".productSelected :first-child")
+        productSelected.textContent = option1
+        
+        let priceOption1 = document.querySelector(".select :nth-child(4)").innerHTML;
+        let productPrice2 = document.querySelector(".productSelected :first-child")
+
+        console.log(document.getElementsByClassName("select"))
+    }
+    optionsSeleted()
 }
 
 function cancel(button) {
