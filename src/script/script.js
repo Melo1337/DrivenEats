@@ -71,17 +71,37 @@ function closeOrder(button) {
     }
     fullPrice()
 
-    function optionsSeleted() {
-        let option1 = document.querySelector(".select :nth-child(2)").innerHTML;
-        let productSelected = document.querySelector(".productSelected :first-child")
-        productSelected.textContent = option1
-        
-        let priceOption1 = document.querySelector(".select :nth-child(4)").innerHTML;
-        let productPrice2 = document.querySelector(".productSelected :first-child")
+    function chanceValues() {
 
-        console.log(document.getElementsByClassName("select"))
+        function productOne() {
+            // NOME DO ALIMENTO
+            let productOne = document.querySelector(".select :nth-child(2)").innerHTML;
+            let productOneOrder = document.querySelector(".productSelected :first-child")
+            productOneOrder.textContent = productOne
+            // preco do alimento
+            let priceOne = document.querySelector(".select :nth-child(4)").innerHTML;
+            let priceOneOrder = document.querySelector(".productSelected :nth-child(2)")
+            priceOneOrder.textContent = priceOne
+        }
+        productOne()
+
+        // SECOUND ITEM
+        function productTwo() {
+            // NOME DO ALIMENTO
+            let productInnerHTML = document.getElementsByClassName("select")[1].children[1].innerHTML;
+            let productCloseOrder = document.getElementsByClassName("productSelected")[1].children[0];
+            productCloseOrder.textContent = productInnerHTML;
+
+            let priceInnerHTML = document.getElementsByClassName("select")[1].children[2].innerHTML;
+            let priceCloseOrder = document.getElementsByClassName("productSelected")[1].children[2];
+            priceCloseOrder.textContent = priceInnerHTML;
+        }
+        productTwo()
+
     }
-    optionsSeleted()
+
+    chanceValues()
+
 }
 
 function cancel(button) {
