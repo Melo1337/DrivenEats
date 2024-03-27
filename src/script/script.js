@@ -92,8 +92,8 @@ function closeOrder(button) {
             let productCloseOrder = document.getElementsByClassName("productSelected")[1].children[0];
             productCloseOrder.textContent = productInnerHTML;
 
-            let priceInnerHTML = document.getElementsByClassName("select")[1].children[2].innerHTML;
-            let priceCloseOrder = document.getElementsByClassName("productSelected")[1].children[2];
+            let priceInnerHTML = document.getElementsByClassName("select")[1].children[3].innerHTML;
+            let priceCloseOrder = document.getElementsByClassName("productSelected")[1].children[1];
             priceCloseOrder.textContent = priceInnerHTML;
         }
         productTwo()
