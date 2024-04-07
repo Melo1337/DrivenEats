@@ -52,8 +52,18 @@ function checkOptionsSelected() {
 }
 
 function closeOrder(button) {
-    const closeOrder = document.getElementsByClassName("hide");
-    closeOrder[0].classList.remove("hide");
+
+    // const closeOrder = document.getElementsByClassName("hide");
+    // closeOrder[0].classList.remove("hide");
+
+    if (
+        optionOneSelected.classList.contains("select") &&
+        optionTwoSelected.classList.contains("select") &&
+        optionThreeSelected.classList.contains("select")
+    ) {
+        const closeOrder = document.getElementsByClassName("hide");
+        closeOrder[0].classList.remove("hide");
+    }
 
     function fullPrice() {
         let priceOneText = document.getElementsByClassName("select")[0].lastElementChild.innerHTML.substring(3).replace(',', '.');
@@ -98,10 +108,27 @@ function closeOrder(button) {
         }
         productTwo()
 
+        function productThree() {
+            // NOME DO ALIMENTO
+            let productInnerHTML = document.getElementsByClassName("select")[2].children[1].innerHTML;
+            let productCloseOrder = document.getElementsByClassName("productSelected")[2].children[0];
+            productCloseOrder.textContent = productInnerHTML;
+
+            let priceInnerHTML = document.getElementsByClassName("select")[2].children[3].innerHTML;
+            let priceCloseOrder = document.getElementsByClassName("productSelected")[2].children[1];
+            priceCloseOrder.textContent = priceInnerHTML;
+        }
+        productThree()
     }
 
     chanceValues()
 
+}
+
+function request(button) {
+    const buttonRequest = document.getElementsByClassName("request")
+    
+    window.location.href = 'https://api.whatsapp.com/send?phone=5532984192494&text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20Frango%20Yin%20Yang%0A-%20Bebida:%20Coquinha%20Gelada%0A-%20Sobremesa:%20Pudim%0ATotal:%20R$%2027.70';
 }
 
 function cancel(button) {
