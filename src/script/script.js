@@ -128,10 +128,16 @@ function closeOrder(button) {
 function request(button) {
     const buttonRequest = document.getElementsByClassName("request")
     
-    window.location.href = 'https://api.whatsapp.com/send?phone=5532984192494&text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20Frango%20Yin%20Yang%0A-%20Bebida:%20Coquinha%20Gelada%0A-%20Sobremesa:%20Pudim%0ATotal:%20R$%2027.70';
+    let textRequest = `Olá, gostaria de fazer o pedido: - Prato: Frango Yin Yang - Bebida: Coquinha Gelada - Sobremesa: Pudim Total: R$ 27.70`
+
+    encodeURI(textRequest)
+
+    window.location.href = `https://api.whatsapp.com/send?phone=5532984192494&text=${textRequest}`;
 }
 
 function cancel(button) {
     const cancelButton = document.getElementsByClassName("confirmation");
     cancelButton[0].classList.add("hide");
 }
+
+// 'https://api.whatsapp.com/send?phone=5532984192494&text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20Frango%20Yin%20Yang%0A-%20Bebida:%20Coquinha%20Gelada%0A-%20Sobremesa:%20Pudim%0ATotal:%20R$%2027.70';
