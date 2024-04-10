@@ -51,10 +51,9 @@ function checkOptionsSelected() {
     }
 }
 
-function closeOrder(button) {
+let dish, drink, dessert, finalPrice;
 
-    // const closeOrder = document.getElementsByClassName("hide");
-    // closeOrder[0].classList.remove("hide");
+function closeOrder(button) {
 
     if (
         optionOneSelected.classList.contains("select") &&
@@ -70,14 +69,14 @@ function closeOrder(button) {
         let priceTwoText = document.getElementsByClassName("select")[1].lastElementChild.innerHTML.substring(3).replace(',', '.');
         let priceThreeText = document.getElementsByClassName("select")[2].lastElementChild.innerHTML.substring(3).replace(',', '.');
 
-        let PriceOne = parseFloat(priceOneText)
-        let PriceTwo = parseFloat(priceTwoText)
-        let PriceThree = parseFloat(priceThreeText)
+        let [PriceOne, PriceTwo, PriceThree] = [parseFloat(priceOneText), parseFloat(priceTwoText), parseFloat(priceThreeText)];
 
         let amount = PriceOne + PriceTwo + PriceThree
 
         let amountHTML = document.getElementsByClassName("productSelected")[3].lastElementChild;
         amountHTML.innerHTML = amount.toFixed(2).replace('.', ',');
+        finalPrice = amountHTML.innerHTML
+
     }
     fullPrice()
 
@@ -85,40 +84,42 @@ function closeOrder(button) {
 
         function productOne() {
             // NOME DO ALIMENTO
-            let productOne = document.querySelector(".select :nth-child(2)").innerHTML;
-            let productOneOrder = document.querySelector(".productSelected :first-child")
-            productOneOrder.textContent = productOne
+            dish = document.getElementsByClassName("select")[0].children[1].innerHTML;
+            let dishOrder = document.getElementsByClassName("productSelected")[0].children[0];
+            dishOrder.textContent = dish
             // preco do alimento
-            let priceOne = document.querySelector(".select :nth-child(4)").innerHTML;
-            let priceOneOrder = document.querySelector(".productSelected :nth-child(2)")
-            priceOneOrder.textContent = priceOne
+            let priceDish = document.getElementsByClassName("select")[0].children[3].innerHTML;
+            let priceDishOrder = document.getElementsByClassName("productSelected")[0].children[1];
+            priceDishOrder.textContent = priceDish
         }
         productOne()
 
         // SECOUND ITEM
         function productTwo() {
             // NOME DO ALIMENTO
-            let productInnerHTML = document.getElementsByClassName("select")[1].children[1].innerHTML;
-            let productCloseOrder = document.getElementsByClassName("productSelected")[1].children[0];
-            productCloseOrder.textContent = productInnerHTML;
+            drink = document.getElementsByClassName("select")[1].children[1].innerHTML;
+            let drinkOrder = document.getElementsByClassName("productSelected")[1].children[0];
+            drinkOrder.textContent = drink;
 
-            let priceInnerHTML = document.getElementsByClassName("select")[1].children[3].innerHTML;
-            let priceCloseOrder = document.getElementsByClassName("productSelected")[1].children[1];
-            priceCloseOrder.textContent = priceInnerHTML;
+            let priceDink = document.getElementsByClassName("select")[1].children[3].innerHTML;
+            let priceDrinkOrder = document.getElementsByClassName("productSelected")[1].children[1];
+            priceDrinkOrder.textContent = priceDink;
         }
         productTwo()
 
         function productThree() {
             // NOME DO ALIMENTO
-            let productInnerHTML = document.getElementsByClassName("select")[2].children[1].innerHTML;
-            let productCloseOrder = document.getElementsByClassName("productSelected")[2].children[0];
-            productCloseOrder.textContent = productInnerHTML;
+            dessert = document.getElementsByClassName("select")[2].children[1].innerHTML;
+            let dessertOrder = document.getElementsByClassName("productSelected")[2].children[0];
+            dessertOrder.textContent = dessert;
 
-            let priceInnerHTML = document.getElementsByClassName("select")[2].children[3].innerHTML;
-            let priceCloseOrder = document.getElementsByClassName("productSelected")[2].children[1];
-            priceCloseOrder.textContent = priceInnerHTML;
+            let priceDessert = document.getElementsByClassName("select")[2].children[3].innerHTML;
+            let priceDessertOrder = document.getElementsByClassName("productSelected")[2].children[1];
+            priceDessertOrder.textContent = priceDessert;
         }
+
         productThree()
+
     }
 
     chanceValues()
@@ -127,8 +128,8 @@ function closeOrder(button) {
 
 function request(button) {
     const buttonRequest = document.getElementsByClassName("request")
-    
-    let textRequest = `Olá, gostaria de fazer o pedido: - Prato: Frango Yin Yang - Bebida: Coquinha Gelada - Sobremesa: Pudim Total: R$ 27.70`
+
+    let textRequest = `Olá, gostaria de fazer o pedido: - Prato: ${dish} - Bebida: ${drink} - Sobremesa: ${dessert} Total: R$ ${finalPrice}`
 
     encodeURI(textRequest)
 
@@ -139,5 +140,3 @@ function cancel(button) {
     const cancelButton = document.getElementsByClassName("confirmation");
     cancelButton[0].classList.add("hide");
 }
-
-// 'https://api.whatsapp.com/send?phone=5532984192494&text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20pedido:%0A-%20Prato:%20Frango%20Yin%20Yang%0A-%20Bebida:%20Coquinha%20Gelada%0A-%20Sobremesa:%20Pudim%0ATotal:%20R$%2027.70';
